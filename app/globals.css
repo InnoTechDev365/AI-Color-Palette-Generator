@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 245, 245;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Cross-browser color input styling */
+input[type="color"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
+/* Firefox specific fixes */ \
+@-moz-document url-prefix() {
+  input[type="color"] {
+    padding: 0;
+    border: none;
+  }
+}
+
+/* Safari specific fixes */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    input[type="color"] {
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Touch-friendly adjustments for mobile */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  .button,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Improved scrolling on iOS */
+.is-ios {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Modal backdrop for all browsers */
+.modal-background {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* For browsers that don't support backdrop-filter */
+@supports not ((backdrop-filter: blur(5px)) or (-webkit-backdrop-filter: blur(5px))) {
+  .modal-background {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Improved focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Hide focus outline for mouse users, but keep for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .print-colors {
+    page-break-inside: avoid;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Utility classes for responsive design */
+.touch-action-none {
+  touch-action: none;
+}
+
+.overscroll-none {
+  overscroll-behavior: none;
+}
+
+/* Improved scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
