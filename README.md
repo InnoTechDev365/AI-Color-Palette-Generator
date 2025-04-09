@@ -1,4 +1,4 @@
-# AI Color Palette Generator
+# AI Color Palette Generator in development
 
 A responsive, cross-browser compatible color palette generator with AI learning capabilities.
 
