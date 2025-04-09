@@ -13,7 +13,7 @@ A responsive, cross-browser compatible color palette generator with AI learning 
 
 ## Live Demo
 
-Visit the live demo:  
+Project in development 
 
 ## Getting Started
 
