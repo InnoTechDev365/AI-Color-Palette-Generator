@@ -1,2 +1,2 @@
-# AI-Color-Palette-Generator
+# Color-Palette-Generator
 Single-page application in development
